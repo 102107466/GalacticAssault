@@ -4,7 +4,7 @@ using GameFramework;
 
 namespace GalacticAssault
 {
-	public class Player : Actor
+	public class Player : Ship
 	{
 		/*===========*/
 		/* Constants */
@@ -15,11 +15,12 @@ namespace GalacticAssault
 		/*==============*/
 		/* Constructors */
 		/*==============*/
+ 
 
-		public Player()
-			: base (SwinGame.ScreenWidth() / 2 - 16.0f,
-					SwinGame.ScreenHeight() / 1.5f,
-					32, 32) {}	
+		public Player() : base (((float)SwinGame.ScreenWidth()) / 2f - 16f, ((float)SwinGame.ScreenHeight()) / 1.5f, 32, 32, 100f)
+        {
+
+        }	
 
 		/*=========*/
 		/* Methods */
