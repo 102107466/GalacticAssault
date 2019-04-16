@@ -5,39 +5,36 @@ namespace GalacticAssault
 {
     public abstract class Enemy : Ship
     {
-        private const float HEALTH_BAR_WIDTH = 16f;
-        private const float HEALTH_BAR_HEIGHT = 128f;
+        private const int HEALTH_BAR_WIDTH = 128;
+        private const int HEALTH_BAR_HEIGHT = 16;
 
-        public float HealthRenderOffset { get; protected set; } = 32f;
+        public int HealthRenderOffset { get; protected set; } = 32;
 
-        public Enemy(float x, float y, int width, int height, float maxHealth) : base(x, y, width, height, maxHealth)
-        {
-
-        }
+        public Enemy(float x, float y, int width, int height, float maxHealth)
+            : base(x, y, width, height, maxHealth) {}
 
         public override void Render()
         {
             float centerX = X + Width / 2.0f;
             float centerY = (Y + Height / 2.0f) - HealthRenderOffset;
-            float width = HEALTH_BAR_WIDTH;
-            float height = HEALTH_BAR_HEIGHT;
+            int width = HEALTH_BAR_WIDTH;
+            int height = HEALTH_BAR_HEIGHT;
             float healthPercentage = 1.0f;
 
             //Healthbar Background
-            SwinGame.FillRectangle(Color.Black, centerX - width / 2.0f, centerY - height / 2.0f, (int)width, (int)height);
+            SwinGame.FillRectangle(Color.Black, centerX - width / 2.0f, centerY - height / 2.0f, width, height);
 
             // HealthBar Health 
             healthPercentage = Utilities.Clamp(Health / MaxHealth, 0.0f, 1.0f);
-            width = HEALTH_BAR_WIDTH * healthPercentage;
-
-            SwinGame.FillRectangle(Color.White, centerX - width / 2.0f, centerY - height / 2.0f, (int)width, (int)height);
+            width = (int)(HEALTH_BAR_WIDTH * healthPercentage);
+            if (width == 0) return;
+            SwinGame.FillRectangle(Color.White, centerX - width / 2.0f, centerY - height / 2.0f, width, height);
 
             // HealthBar Predicted Health
             healthPercentage = Utilities.Clamp((Health - DamageBuffer) / MaxHealth, 0.0f, 1.0f);
-            width = HEALTH_BAR_WIDTH * healthPercentage;
-            SwinGame.FillRectangle(Color.Red, centerX - (float)width / 2.0f, centerY - (float)height / 2.0f, (int)width, (int)height);
-
-
+            width = (int)(HEALTH_BAR_WIDTH * healthPercentage);
+            if (width == 0) return;
+            SwinGame.FillRectangle(Color.Red, centerX - width / 2.0f, centerY - height / 2.0f, width, height);
         }
     }
 }
