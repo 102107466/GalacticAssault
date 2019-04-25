@@ -25,22 +25,22 @@ namespace GalacticAssault
 
         public override void Update(EntityManager entities)
         {
-            float xDir = (float)Math.Cos(Direction * (Math.PI * 180));
-            float yDir = (float)Math.Sin(Direction * (Math.PI * 180)); 
+            float xDir = (float)Math.Cos(Direction * (Math.PI / 180));
+            float yDir = (float)Math.Sin(Direction * (Math.PI / 180)); 
             X += xDir * SPEED;
             Y += yDir * SPEED;
+
             float screenMargin = 100;
             bool onScreen = SwinGame.PointInRect(
-            X,
-            Y,
-            -screenMargin,
-            -screenMargin,
-            SwinGame.ScreenWidth() + screenMargin * 2,
-            SwinGame.ScreenHeight() + screenMargin * 2
+            	X,
+            	Y,
+            	-screenMargin,
+            	-screenMargin,
+            	SwinGame.ScreenWidth() + screenMargin * 2,
+            	SwinGame.ScreenHeight() + screenMargin * 2
             );
-            if (!onScreen) entities.Remove(this);
 
-            Y -= SPEED;
+            if (!onScreen) entities.Remove(this);
             if (Y < -100) entities.Remove(this); // delete when bullet is off-screen
         }
 

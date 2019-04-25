@@ -38,7 +38,7 @@ namespace GalacticAssault
             // shooting
             //float bulletsToShoot = 6;
             //float direction = (360 / bulletsToShoot);
-            if (SwinGame.KeyTyped(KeyCode.vk_SPACE)) entities.Add(new Bullet(X + Width/2.0f, Y, 45));
+            if (SwinGame.KeyTyped(KeyCode.vk_SPACE)) entities.Add(new Bullet(X + Width/2.0f, Y, 270));
 		}
 
 		public override void Render()
