@@ -1,4 +1,4 @@
-﻿using SwinGameSDK;
+using SwinGameSDK;
 using GameFramework;
 using System;
 
@@ -12,8 +12,8 @@ namespace GalacticAssault
         /*==============*/
 
         public Drone()
-			: base(Utilities.Random(100, SwinGame.ScreenWidth() - 100),
-				   -100, 32, 32, 100) {}
+            : base(Utilities.Random(100, SwinGame.ScreenWidth() - 100),
+                   -100, 32, 32, 100) {}
 
         public override void Update(EntityManager entities)
         {
@@ -28,8 +28,8 @@ namespace GalacticAssault
             if (Utilities.Random(1, 64) == 1)
             {
                 float bulletsToShoot = 16;
-				float angle = (360 / bulletsToShoot);
-				float randomComponent = Utilities.Random(0, (int)angle);
+                float angle = (360 / bulletsToShoot);
+                float randomComponent = Utilities.Random(0, (int)angle);
                 for (int i = 0; i < bulletsToShoot; i++)
                 {
                     float centerX = X + Width / 2;
