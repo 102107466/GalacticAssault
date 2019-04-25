@@ -14,7 +14,7 @@ namespace GalacticAssault
 		/* Methods */
 		/*=========*/
 
-		static int Random(int min, int max)
+		public static int Random(int min, int max)
 		{
 			return random.Next(min, max);
 		}

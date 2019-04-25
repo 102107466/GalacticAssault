@@ -10,7 +10,7 @@ namespace GalacticAssault
 		/* Constants */
 		/*===========*/
 
-		private const int SPEED = 1;
+		private const float SPEED = 1.5f;
 
 		/*==============*/
 		/* Constructors */
@@ -34,8 +34,11 @@ namespace GalacticAssault
 			if (SwinGame.KeyDown(KeyCode.vk_DOWN)) Y += SPEED;
 			if (SwinGame.KeyDown(KeyCode.vk_LEFT)) X -= SPEED * 2;
 
-			// shooting
-			if (SwinGame.KeyTyped(KeyCode.vk_SPACE)) entities.Add(new Bullet(X + Width/2.0f, Y));
+            // shooting
+            if (SwinGame.KeyTyped(KeyCode.vk_SPACE))
+			{
+				entities.Add(new Bullet(X + Width/2.0f, Y, 270));
+			}
 		}
 
 		public override void Render()
