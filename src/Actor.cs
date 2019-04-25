@@ -3,34 +3,34 @@ using GameFramework;
 
 namespace GalacticAssault
 {
-	public abstract class Actor : Entity
-	{
-		/*============*/
-		/* Properties */
-		/*============*/
-		
-		public float X { get; set; }
-		public float Y { get; set; }
-		public int Width { get; set; }
-		public int Height { get; set; }
+    public abstract class Actor : Entity
+    {
+        /*============*/
+        /* Properties */
+        /*============*/
+        
+        public float X { get; set; }
+        public float Y { get; set; }
+        public int Width { get; set; }
+        public int Height { get; set; }
 
-		/*=============*/
-		/* Constructor */
-		/*=============*/
+        /*=============*/
+        /* Constructor */
+        /*=============*/
 
-		public Actor(float x, float y, int width, int height)
-		{
-			X = x;
-			Y = y;
-			Width = width;
-			Height = height;
-		}
+        public Actor(float x, float y, int width, int height)
+        {
+            X = x;
+            Y = y;
+            Width = width;
+            Height = height;
+        }
 
-		/*=========*/
-		/* Methods */
-		/*=========*/
+        /*=========*/
+        /* Methods */
+        /*=========*/
 
-		public abstract void Update(EntityManager entities);
-		public abstract void Render();
-	}
+        public abstract void Update(EntityManager entities);
+        public abstract void Render();
+    }
 }

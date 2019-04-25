@@ -2,28 +2,28 @@ using System;
 
 namespace GalacticAssault
 {
-	static class Utilities
-	{
-		/*========*/
-		/* Fields */
-		/*========*/
+    static class Utilities
+    {
+        /*========*/
+        /* Fields */
+        /*========*/
 
-		private static Random random = new Random();
-		
-		/*=========*/
-		/* Methods */
-		/*=========*/
+        private static Random random = new Random();
+        
+        /*=========*/
+        /* Methods */
+        /*=========*/
 
-		public static int Random(int min, int max)
-		{
-			return random.Next(min, max);
-		}
+        public static int Random(int min, int max)
+        {
+            return random.Next(min, max);
+        }
 
-		public static T Clamp<T>(T val, T min, T max) where T : IComparable<T>
-		{
-			return val.CompareTo(min) < 0 ? min :
-				   val.CompareTo(max) > 0 ? max :
-				   val;
-		}
-	}
+        public static T Clamp<T>(T val, T min, T max) where T : IComparable<T>
+        {
+            return val.CompareTo(min) < 0 ? min :
+                   val.CompareTo(max) > 0 ? max :
+                   val;
+        }
+    }
 }

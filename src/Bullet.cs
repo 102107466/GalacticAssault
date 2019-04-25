@@ -32,20 +32,20 @@ namespace GalacticAssault
 
             float screenMargin = 100;
             bool onScreen = SwinGame.PointInRect(
-            	X,
-            	Y,
-            	-screenMargin,
-            	-screenMargin,
-            	SwinGame.ScreenWidth() + screenMargin * 2,
-            	SwinGame.ScreenHeight() + screenMargin * 2
+                X,
+                Y,
+                -screenMargin,
+                -screenMargin,
+                SwinGame.ScreenWidth() + screenMargin * 2,
+                SwinGame.ScreenHeight() + screenMargin * 2
             );
 
             if (!onScreen) entities.Remove(this);
         }
 
         public override void Render()
-		{
-			SwinGame.FillRectangle(Color.Yellow, X, Y, Width, Height);
-		}
-	}
+        {
+            SwinGame.FillRectangle(Color.Yellow, X, Y, Width, Height);
+        }
+    }
 }
