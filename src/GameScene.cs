@@ -8,7 +8,6 @@ namespace GalacticAssault
 		{
 			Entities.Add(new Player());
             Entities.Add(new Drone());
-
         }
 	}
 }

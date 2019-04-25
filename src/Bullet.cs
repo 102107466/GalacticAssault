@@ -14,7 +14,7 @@ namespace GalacticAssault
 
         public float Direction { get; protected set; }
 
-        public Bullet(float x, float y, float dir) : base(x - 4, y - 8, 8, 16)
+        public Bullet(float x, float y, float dir) : base(x - 4, y - 4, 8, 8)
         {
             Direction = dir;
         }
@@ -41,7 +41,6 @@ namespace GalacticAssault
             );
 
             if (!onScreen) entities.Remove(this);
-            if (Y < -100) entities.Remove(this); // delete when bullet is off-screen
         }
 
         public override void Render()
