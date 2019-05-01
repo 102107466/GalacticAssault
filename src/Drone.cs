@@ -6,14 +6,17 @@ namespace GalacticAssault
 {
     public class Drone : Enemy
     {
-
-        /*==============*/
-        /* Constructors */
-        /*==============*/
+        /*=============*/
+        /* Constructor */
+        /*=============*/
 
         public Drone()
             : base(Utilities.Random(100, SwinGame.ScreenWidth() - 100),
                    -100, 32, 32, 100) {}
+
+        /*=========*/
+        /* Methods */
+        /*=========*/
 
         public override void Update(EntityManager entities)
         {
@@ -45,6 +48,5 @@ namespace GalacticAssault
             base.Render();
             SwinGame.FillRectangle(Color.Orange, X, Y, Width, Height);
         }
-
     }
 }
