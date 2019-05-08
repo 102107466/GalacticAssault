@@ -8,7 +8,7 @@ namespace GalacticAssault
         /* Fields */
         /*========*/
 
-        private static Random random = new Random();
+        private static Random _random = new Random();
         
         /*=========*/
         /* Methods */
@@ -16,7 +16,7 @@ namespace GalacticAssault
 
         public static int Random(int min, int max)
         {
-            return random.Next(min, max);
+            return _random.Next(min, max);
         }
 
         public static T Clamp<T>(T val, T min, T max) where T : IComparable<T>
