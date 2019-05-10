@@ -28,11 +28,17 @@ namespace GalacticAssault
 
         public override void Update(EntityManager entities)
         {
+            float lastX = X;
+            float lastY = Y;
             // movement
             if (SwinGame.KeyDown(KeyCode.vk_UP)) Y -= SPEED;
             if (SwinGame.KeyDown(KeyCode.vk_RIGHT)) X += SPEED * 2;
             if (SwinGame.KeyDown(KeyCode.vk_DOWN)) Y += SPEED;
             if (SwinGame.KeyDown(KeyCode.vk_LEFT)) X -= SPEED * 2;
+            if(lastX != X || lastY != Y)//If ship moves play sound effect
+            {
+                SwinGame.PlaySoundEffect("ShipFlyingSound");
+            }
 
             // shooting
             if (SwinGame.KeyTyped(KeyCode.vk_SPACE))
@@ -44,6 +50,7 @@ namespace GalacticAssault
         public override void Render()
         {
             SwinGame.FillRectangle(Color.Green, X, Y, Width, Height);
+            //SwinGame.DrawBitmap("PlayerShip", X, Y);//Draw player ship
         }
     }
 }
