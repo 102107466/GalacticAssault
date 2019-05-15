@@ -17,7 +17,7 @@ namespace GalacticAssault
         /*==============*/
  
 
-        public Player() : base (((float)SwinGame.ScreenWidth()) / 2f - 16f, ((float)SwinGame.ScreenHeight()) / 1.5f, 32, 32, 100f)
+        public Player() : base (((float)SwinGame.ScreenWidth()) / 2f - 16f, ((float)SwinGame.ScreenHeight()) / 1.5f, 64, 64, 100f)
         {
 
         }    
@@ -35,7 +35,8 @@ namespace GalacticAssault
             if (SwinGame.KeyDown(KeyCode.vk_RIGHT)) X += SPEED * 2;
             if (SwinGame.KeyDown(KeyCode.vk_DOWN)) Y += SPEED;
             if (SwinGame.KeyDown(KeyCode.vk_LEFT)) X -= SPEED * 2;
-            if(lastX != X || lastY != Y)//If ship moves play sound effect
+
+            if(SwinGame.KeyTyped(KeyCode.vk_UP) || SwinGame.KeyTyped(KeyCode.vk_RIGHT) || SwinGame.KeyTyped(KeyCode.vk_DOWN) || SwinGame.KeyTyped(KeyCode.vk_LEFT))
             {
                 SwinGame.PlaySoundEffect("ShipFlyingSound");
             }
@@ -50,7 +51,7 @@ namespace GalacticAssault
         public override void Render()
         {
             SwinGame.FillRectangle(Color.Green, X, Y, Width, Height);
-            //SwinGame.DrawBitmap("PlayerShip", X, Y);//Draw player ship
+            SwinGame.DrawBitmap("PlayerShip", X, Y);//Draw player ship
         }
     }
 }
