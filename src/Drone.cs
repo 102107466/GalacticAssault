@@ -38,7 +38,7 @@ namespace GalacticAssault
                     float centerX = X + Width / 2;
                     float centerY = Y + Height / 2;
                     float direction = (angle * i) + randomComponent;
-                    entities.Add(new Bullet(centerX, centerY, direction));
+                    entities.Add(new Bullet<Player>(centerX, centerY, direction));
                 }
             }
         }

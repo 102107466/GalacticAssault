@@ -37,7 +37,7 @@ namespace GalacticAssault
             // shooting
             if (SwinGame.KeyTyped(KeyCode.vk_SPACE))
             {
-                entities.Add(new Bullet(X + Width/2.0f, Y, 270));
+                entities.Add(new Bullet<Enemy>(X + Width/2.0f, Y, 270));
             }
         }
 
