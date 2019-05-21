@@ -6,10 +6,9 @@ namespace GalacticAssault
     {
         public GameScene() 
         {
-			Entities.Add(new ScrollingBackground());
-			Entities.Add(new EntitySpawner());
+            Entities.Add(new ScrollingBackground());
+            Entities.Add(new EntitySpawner());
             Entities.Add(new Player());
-            //Entities.Add(new Drone());
         }
     }
 }

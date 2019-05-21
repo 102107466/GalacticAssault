@@ -17,14 +17,14 @@ namespace GalacticAssault
             Width = width;
             Height = height;
         }
-		
-		public static bool CheckCollision(Actor lhs, Actor rhs)
-		{
-			return 	lhs.X < rhs.X + rhs.Width &&
-					lhs.X + lhs.Width > rhs.X &&
-					lhs.Y < rhs.Y + rhs.Height &&
-					lhs.Y + lhs.Height > rhs.Y;
-		}
+        
+        public static bool CheckCollision(Actor lhs, Actor rhs)
+        {
+            return  lhs.X < rhs.X + rhs.Width &&
+                    lhs.X + lhs.Width > rhs.X &&
+                    lhs.Y < rhs.Y + rhs.Height &&
+                    lhs.Y + lhs.Height > rhs.Y;
+        }
         
         public abstract void Update(EntityManager entities);
         public abstract void Render();
