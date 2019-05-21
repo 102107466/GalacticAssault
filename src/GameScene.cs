@@ -1,4 +1,5 @@
 using GameFramework;
+using SwinGameSDK;
 
 namespace GalacticAssault
 {
@@ -9,6 +10,7 @@ namespace GalacticAssault
             Entities.Add(new ScrollingBackground());
             Entities.Add(new EntitySpawner());
             Entities.Add(new Player());
+            SwinGame.PlayMusic("GameMusic");//Play Game Music
         }
     }
 }

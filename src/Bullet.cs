@@ -52,6 +52,7 @@ namespace GalacticAssault
                 SwinGame.ScreenWidth() + screenMargin * 2,
                 SwinGame.ScreenHeight() + screenMargin * 2
             );
+            SwinGame.DrawBitmap("Bullet", X, Y);//Draw bullet
 
             if (!onScreen) entities.Remove(this);
         }
