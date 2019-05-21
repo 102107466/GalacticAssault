@@ -17,7 +17,6 @@ namespace GalacticAssault
         public Bullet(float x, float y, float dir) : base(x - 4, y - 4, 8, 8)
         {
             Direction = dir;
-            SwinGame.PlaySoundEffect("BulletShoot");
         }
 
         /*=========*/

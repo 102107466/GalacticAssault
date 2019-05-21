@@ -17,7 +17,7 @@ namespace GalacticAssault
         /*==============*/
  
 
-        public Player() : base (((float)SwinGame.ScreenWidth()) / 2f - 16f, ((float)SwinGame.ScreenHeight()) / 1.5f, 64, 64, 100f)
+        public Player() : base (((float)SwinGame.ScreenWidth()) / 2f - 16f, ((float)SwinGame.ScreenHeight()) / 1.5f, 32, 32, 100f)
         {
 
         }    
@@ -45,13 +45,13 @@ namespace GalacticAssault
             if (SwinGame.KeyTyped(KeyCode.vk_SPACE))
             {
                 entities.Add(new Bullet(X + Width/2.0f, Y, 270));
+            	SwinGame.PlaySoundEffect("BulletShoot");
             }
         }
 
         public override void Render()
         {
             SwinGame.FillRectangle(Color.Green, X, Y, Width, Height);
-            SwinGame.DrawBitmap("PlayerShip", X, Y);//Draw player ship
         }
     }
 }
