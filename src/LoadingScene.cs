@@ -4,7 +4,6 @@ namespace GalacticAssault
 {
     public class LoadingScene : Scene
     {
-        
         protected override void Update()
         {
             LoadBitmaps();

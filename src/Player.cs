@@ -45,7 +45,7 @@ namespace GalacticAssault
             if (SwinGame.KeyTyped(KeyCode.vk_SPACE))
             {
                 entities.Add(new Bullet<Enemy>(X + Width/2.0f, Y, 270));
-                SwinGame.PlaySoundEffect("BulletShoot");
+            	SwinGame.PlaySoundEffect("BulletShoot");
             }
         }
 
