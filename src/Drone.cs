@@ -40,6 +40,7 @@ namespace GalacticAssault
                     float direction = (angle * i) + randomComponent;
                     entities.Add(new Bullet(centerX, centerY, direction));
                 }
+            	SwinGame.PlaySoundEffect("BulletShoot");
             }
         }
 

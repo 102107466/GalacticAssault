@@ -1,4 +1,5 @@
 using GameFramework;
+using SwinGameSDK;
 
 namespace GalacticAssault
 {
@@ -8,6 +9,7 @@ namespace GalacticAssault
         {
             Entities.Add(new Player());
             Entities.Add(new Drone());
+            SwinGame.PlayMusic("GameMusic");//Play Game Music
         }
     }
 }
