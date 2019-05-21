@@ -5,19 +5,11 @@ namespace GalacticAssault
 {
     public abstract class Actor : Entity
     {
-        /*============*/
-        /* Properties */
-        /*============*/
-        
         public float X { get; set; }
         public float Y { get; set; }
         public int Width { get; set; }
         public int Height { get; set; }
-
-        /*=============*/
-        /* Constructor */
-        /*=============*/
-
+        
         public Actor(float x, float y, int width, int height)
         {
             X = x;
@@ -25,11 +17,15 @@ namespace GalacticAssault
             Width = width;
             Height = height;
         }
-
-        /*=========*/
-        /* Methods */
-        /*=========*/
-
+        
+        public static bool CheckCollision(Actor lhs, Actor rhs)
+        {
+            return  lhs.X < rhs.X + rhs.Width &&
+                    lhs.X + lhs.Width > rhs.X &&
+                    lhs.Y < rhs.Y + rhs.Height &&
+                    lhs.Y + lhs.Height > rhs.Y;
+        }
+        
         public abstract void Update(EntityManager entities);
         public abstract void Render();
     }
