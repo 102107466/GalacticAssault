@@ -41,9 +41,14 @@ namespace GalacticAssault
             }
         }
 
+        public Bitmap Bitmap { get; protected set; }
+		public Animation Animation { get; protected set; }
+
+
         public override void Render()
         {
             SwinGame.FillRectangle(Color.Green, X, Y, Width, Height);
+            SwinGame.DrawBitmap("PlayerShip", X, Y);
         }
     }
 }
