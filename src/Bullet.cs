@@ -43,12 +43,8 @@ namespace GalacticAssault
             if (!onScreen) entities.Remove(this);
         }
 
-        public Bitmap Bitmap { get; protected set; }
-        public Animation Animation { get; protected set; }
-
         public override void Render()
         {
-            SwinGame.FillRectangle(Color.Yellow, X, Y, Width, Height);
             SwinGame.DrawBitmap("Bullet", X, Y);
         }
     }
