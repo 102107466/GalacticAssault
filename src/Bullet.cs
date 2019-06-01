@@ -59,7 +59,7 @@ namespace GalacticAssault
 
         public override void Render()
         {
-            SwinGame.FillRectangle(Color.Yellow, X, Y, Width, Height);
+            SwinGame.DrawBitmap("Bullet", X, Y);
         }
     }
 }

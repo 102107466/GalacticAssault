@@ -15,12 +15,11 @@ namespace GalacticAssault
         /*==============*/
         /* Constructors */
         /*==============*/
- 
 
-        public Player() : base (((float)SwinGame.ScreenWidth()) / 2f - 16f, ((float)SwinGame.ScreenHeight()) / 1.5f, 32, 32, 100f)
-        {
-
-        }    
+        public Player()
+			: base (((float)SwinGame.ScreenWidth()) / 2f - 16f,
+					((float)SwinGame.ScreenHeight()) / 1.5f,
+					64, 64, 100f) {}    
 
         /*=========*/
         /* Methods */
@@ -51,7 +50,7 @@ namespace GalacticAssault
 
         public override void Render()
         {
-            SwinGame.FillRectangle(Color.Green, X, Y, Width, Height);
+            SwinGame.DrawBitmap("PlayerShip", X, Y);
         }
     }
 }
