@@ -11,6 +11,15 @@ namespace GalacticAssault
             LoadMusic();
             base.Update();
             Game.PushScene(new GameScene());
+            LoadBitmaps();
+        }
+
+        private void LoadBitmaps()
+        {
+            SwinGame.LoadBitmapNamed("Bullet", "Resources/images/Bullet.PNG");
+            SwinGame.LoadBitmapNamed("DroneShip", "Resources/images/DroneShip.PNG");
+            SwinGame.LoadBitmapNamed("PlayerShip", "Resources/images/PlayerShip.PNG");
+            SwinGame.LoadBitmapNamed("Background", "Resources/images/Background.PNG");
         }
 
         //Loding game images
