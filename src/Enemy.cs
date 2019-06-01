@@ -8,7 +8,7 @@ namespace GalacticAssault
         private const int HEALTH_BAR_WIDTH = 128;
         private const int HEALTH_BAR_HEIGHT = 16;
 
-        public int HealthRenderOffset { get; protected set; } = 32;
+        public int HealthRenderOffset { get; protected set; } = 48;
 
         public Enemy(float x, float y, int width, int height, float maxHealth)
             : base(x, y, width, height, maxHealth) {}

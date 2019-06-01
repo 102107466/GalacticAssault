@@ -11,6 +11,7 @@ namespace GalacticAssault
             LoadMusic();
             base.Update();
             Game.PushScene(new GameScene());
+            LoadBitmaps();
         }
 
         //Loding game images
