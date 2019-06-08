@@ -40,7 +40,7 @@ namespace GalacticAssault
                     float direction = (angle * i) + randomComponent;
                     entities.Add(new Bullet<Player>(centerX, centerY, direction));
                 }
-            	SwinGame.PlaySoundEffect("BulletShoot");
+                SwinGame.PlaySoundEffect("BulletShoot");
             }
         }
 
@@ -48,6 +48,12 @@ namespace GalacticAssault
         {
             base.Render();
             SwinGame.DrawBitmap("DroneShip", X, Y);
+        }
+
+        protected override void Destroy(EntityManager entities)
+        {
+            AddScore(250, entities);
+            base.Destroy(entities);
         }
     }
 }

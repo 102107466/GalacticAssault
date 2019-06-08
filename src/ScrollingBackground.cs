@@ -39,7 +39,10 @@ namespace GalacticAssault
         
         public void Render()
         {
-            _backgrounds.ForEach(bg => SwinGame.DrawBitmap(_background, 0, bg));
+            _backgrounds.ForEach(bg => {
+                SwinGame.DrawBitmap(_background, 0, bg);
+                SwinGame.DrawBitmap(_background, SwinGame.BitmapWidth(_background), bg);
+            });
         }
     }
 }

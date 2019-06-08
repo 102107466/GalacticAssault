@@ -21,9 +21,6 @@ namespace GalacticAssault
             int height = HEALTH_BAR_HEIGHT;
             float healthPercentage = 1.0f;
 
-            //Healthbar Background
-            SwinGame.FillRectangle(Color.Black, centerX - width / 2.0f, centerY - height / 2.0f, width, height);
-
             // HealthBar Health 
             healthPercentage = Utilities.Clamp(Health / MaxHealth, 0.0f, 1.0f);
             width = (int)(HEALTH_BAR_WIDTH * healthPercentage);

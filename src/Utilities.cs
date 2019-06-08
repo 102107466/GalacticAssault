@@ -25,5 +25,9 @@ namespace GalacticAssault
                    val.CompareTo(max) > 0 ? max :
                    val;
         }
+
+        public static double Lerp(double start, double finish, double strength) {
+            return start + strength * (finish - start);
+        }
     }
 }

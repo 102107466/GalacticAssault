@@ -9,34 +9,44 @@ namespace GalacticAssault
             LoadBitmaps();
             LoadSoundEffects();
             LoadMusic();
+            LoadFonts();
+
             base.Update();
-            Game.PushScene(new GameScene());
-            LoadBitmaps();
+            Game.SetScene(new MainMenu());
         }
 
-        //Loding game images
+        // Loding game images
         private void LoadBitmaps()
         {
-            SwinGame.LoadBitmapNamed("Bullet", "Resources/images/Bullet.PNG");
-            SwinGame.LoadBitmapNamed("DroneShip", "Resources/images/DroneShip.PNG");
-            SwinGame.LoadBitmapNamed("PlayerShip", "Resources/images/PlayerShip.PNG");
-            SwinGame.LoadBitmapNamed("Background", "Resources/images/Background.PNG");
+            SwinGame.LoadBitmapNamed("Bullet", "Bullet.png");
+            SwinGame.LoadBitmapNamed("DroneShip", "DroneShip.png");
+            SwinGame.LoadBitmapNamed("PlayerShip", "PlayerShip.png");
+            SwinGame.LoadBitmapNamed("Background", "Background.png");
         }
 
-        //Loading game sound effects
+        // loading game sound effects
         private void LoadSoundEffects()
         {
-            SwinGame.LoadSoundEffectNamed("BulletShoot", "Resources/sounds/BulletShoot.WAV");
-            SwinGame.LoadSoundEffectNamed("BulletHitSound", "Resources/sounds/BulletHitSound.WAV");
-            SwinGame.LoadSoundEffectNamed("ExplosionSound", "Resources/sounds/ExplosionSound.WAV");
-            SwinGame.LoadSoundEffectNamed("ShipFlyingSound", "Resources/sounds/ShipFlyingSound.WAV");
+            SwinGame.LoadSoundEffectNamed("BulletShoot", "BulletShoot.wav");
+            SwinGame.LoadSoundEffectNamed("BulletHitSound", "BulletHitSound.wav");
+            SwinGame.LoadSoundEffectNamed("ExplosionSound", "ExplosionSound.wav");
+            SwinGame.LoadSoundEffectNamed("ShipFlyingSound", "ShipFlyingSound.wav");
+            SwinGame.LoadSoundEffectNamed("Select1", "Select1.wav");
+            SwinGame.LoadSoundEffectNamed("Select2", "Select2.wav");
         }
 
-        //Loading game Music
+        // loading game music
         private void LoadMusic()
         {
-            SwinGame.LoadMusicNamed("MainMenuMusic", "Resources/sounds/MainMenuMusic.MP3");
-            SwinGame.LoadMusicNamed("GameMusic", "Resources/sounds/GameMusic.MP3");
+            SwinGame.LoadMusicNamed("MainMenuMusic", "MainMenuMusic.mp3");
+            SwinGame.LoadMusicNamed("GameMusic", "GameMusic.mp3");
+        }
+
+        // loading game fonts
+        private void LoadFonts()
+        {
+            SwinGame.LoadFontNamed("MenuFont", "ModernDOS4378x8.ttf", 24);
+            SwinGame.LoadFontNamed("GameFont", "ModernDOS4378x8.ttf", 12);
         }
     }
 }

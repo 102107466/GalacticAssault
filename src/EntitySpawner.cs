@@ -17,7 +17,7 @@ namespace GalacticAssault
 
         private void SpawnEnemies(EntityManager entities)
         {
-            if (Utilities.Random(1,500) == 1)
+            if (Utilities.Random(1,400) == 1)
             {
                 entities.Add(new Drone());
             }

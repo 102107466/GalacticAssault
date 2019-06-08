@@ -1,5 +1,6 @@
 using SwinGameSDK;
 using GameFramework;
+using System.Collections.Generic;
 
 namespace GalacticAssault
 {
@@ -24,6 +25,13 @@ namespace GalacticAssault
                     lhs.X + lhs.Width > rhs.X &&
                     lhs.Y < rhs.Y + rhs.Height &&
                     lhs.Y + lhs.Height > rhs.Y;
+        }
+
+        public void AddScore(int score, EntityManager entities)
+        {
+            List<Player> players = entities.GetEntitiesByType<Player>();
+            players.ForEach(p => p.Score += score);
+            entities.Add(new ScoreParticle(X + Width/2, Y + Height/2, score));
         }
         
         public abstract void Update(EntityManager entities);
