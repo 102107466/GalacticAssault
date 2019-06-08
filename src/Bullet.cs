@@ -42,7 +42,7 @@ namespace GalacticAssault
                 shotTargets.ForEach(target => {
                     target.Damage(DAMAGE); //damage the targets
                     if (!(target is Player) &&
-                        (target.Health - target.DamageBuffer) > 0) target.AddScore(100, entities);
+                        (target.Health - target.DamageBuffer) >= 0) target.AddScore(100, entities);
                 });
                 entities.Remove(this);//destroy this bullet
             }
