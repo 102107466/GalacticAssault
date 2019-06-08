@@ -25,16 +25,18 @@ namespace GalacticAssault
                 DamageBuffer--;
                 Health--;
                 
-                if (Health <= 0)
-                {
-                    entities.Remove(this);
-                }
+                if (Health <= 0) Destroy(entities);
             }
         }
 
         public virtual void Damage(int damage)
         {
             DamageBuffer += damage;
+        }
+
+        protected virtual void Destroy(EntityManager entities)
+        {
+            entities.Remove(this);
         }
     }
 }
