@@ -7,7 +7,7 @@ namespace GalacticAssault
     {
         public static void Main(string[] args)
         {
-            SwinGame.OpenGraphicsWindow("Game", 800, 600);
+            SwinGame.OpenGraphicsWindow("Game", 1280, 720);
             Game.SetScene(new LoadingScene()); 
             Game.Start(); 
             SwinGame.ReleaseAllResources(); 
